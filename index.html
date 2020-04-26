@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Neuroevolution</title>
+    <title>Group 4 Project Aqualis</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <script src="TemplateData/UnityProgress.js"></script>
@@ -21,5 +21,98 @@
         <div class="title">Neuroevolution</div>
       </div>
     </div>
+
+    <p>
+      This is a game of dodging lasers, the only objective of the game is to survive as long as possible, there are 2 bots in the game too, they are both trained using neuroevolution.
+    </p>
+
+    <h1>What is NeuroEvolution</h1>
+    <p>
+      You can split the term into 2 parts, "Neuro" and "Evolution". Let's look at each of these words individually.
+    </p>
+
+    <h1>Neuro</h1>
+    <p>
+      "Neuro" corresponds to neural network. Neural network can be thought of as a mathematical function, which takes a list of numbers(vector) as inputs, then outputs another list of numbers(vector).
+    </p>
+    <p>
+      Neural network is a function that have coefficient or parameters, which you can change in order to achieve a different output. <br />
+      Just like for quadratic function (ax^2 + bx + c = y) where a, b and c are parameters which you can change to achieve a different result.
+    </p>
+    <p>
+      In this game, the neural network takes information from the environment as input, then outputs the decision of the bot. So neural network acts as the brain of the bots.
+    </p>
+    <p>
+      But how should you choose the parameters for the neural network? This is where the "Evolution" part comes in to play.
+    </p>
+
+    <h1>Evolution</h1>
+    <p>
+      "Evolution" corresponds to genetic algorithm. Genetic algorithm is based on natural selection, which means that only the fittest organism can survive, that's why organism tends to evolve as time passes. There are 5 basic steps in genetic algorithm:
+    </p>
+    <h3>1. Initilization</h3>
+    <p>
+      Initialize a population. In the game above, a bunch of bots are create, where each of them has a neural network as their brain
+    </p>
+    <h3>2. Selection</h3>
+    <p>
+      Select the fittest. In the game above, the bots are forced to play the laser game, where all the bots with a weak neural network will touch the lasers and die. 
+    </p>
+    <h3>3. Crossover</h3>
+    <p>
+      Create some new bots based on the fittest bots. In the game above, a new population of bots are initialized, and their brain are copied from the 5 bots that survived the longest
+    </p>
+    <h3>4. Mutation</h3>
+    <p>
+      The gene of the new bots are mutated. In the game above, the parameters of the neural network of the bots in the new population is slightly changed.
+    </p>
+    <h3>5. Repeat</h3>
+    <p>
+      Repeat step 2-4.
+    </p>
+
+    <h1>Architecture and Parameters</h1>
+    <p>
+      This section is for people who are familiar with neurooevolution.
+    </p>
+    <h3>Architecture</h3>
+    <ul>
+      <li>Layer: 3</li>
+      <li>Input Layer Size: 17 units</li>
+      <li>Hidden Layer Size: 5 units</li>
+      <li>Output Layer Size: 4 units</li>
+    </ul>
+    <h4>Input Layer</h4>
+    <p>
+      <ul>
+      <li>12 of the input units are ray detection (1 for each ray): return 0 when no laser detected, else return the distance of the bot from the laser</li>
+      <li>4 of the input units are x position, y position, x velocity and y velocity</li>
+      <li>1 of the input units are center detection: return 1 when bot is in a laser, else return 0</li>
+      </ul>
+      Also each laser has a internal timer, where it is initially 0 when spawning, then it increases until the spawn animation has ended, the timer will stop at 1<br />
+      All the ray detection inputs are multiplied by the internal timer of the laser that it detected.
+    </p>
+    <h4>Output Layer</h4>
+    <p>
+      Each of the output units corresponds to one of the arrow keys. So the neural network is controlling the bot just like how you control your character in the game.
+    </p>
+    <h3>Parameters</h3>
+    <ul>
+      <li>Population Size: 60</li>
+      <li>Mutation Rate: 0.1 and 0.2 (the mutation rate of the two bots are different)</li>
+      <li>Mutation Magnitude: 0.25</li>
+      <li>Weight Clamping: only allow weights to be between -1 and 1</li>
+    </ul>
+
+    <h1>Additional Information</h1>
+    <p>
+      In the evolution process, the best bots from the previous population will also be included in the current populations. This is can ensure that there is enough exploitation (If you know a little about reinforcement learning, you will know that this is simply balancing the explore exploit tradeoff)
+    </p>
+    <p>
+      Also, the best bots so far will also be included in the current population too. (Since apparently the thing above still doesn't give enough exploitation)
+    </p>
+    <p>
+      Lastly, the lasers on the wall aren't here originally, I added them because without them, the bots will all just go to a corner and do nothing, since the probability of dying when staying at a corner is smaller. (In other words this is adding exploration to avoid too much exploitation)
+    </p>
   </body>
 </html>
