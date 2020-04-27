@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="TemplateData/style.css">
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/grp 4 test.json", {onProgress: UnityProgress});
     </script>
@@ -16,12 +18,11 @@
     <div class="webgl-content">
       <div id="unityContainer" style="width: 1067px; height: 600px"></div>
       <div class="footer">
-        <div class="webgl-logo"></div>
         <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-        <div class="title">Neuroevolution</div>
       </div>
     </div>
 
+    <img src="images/control.png" />
     <p>
       This is a game of dodging lasers, the only objective of the game is to survive as long as possible, there are 2 bots in the game too, they are both trained using neuroevolution.
     </p>
@@ -32,21 +33,27 @@
     </p>
 
     <h1>Neuro</h1>
+    <img src="images/neuralNet.png" />
+    <img src="images/netEquation.png" />
     <p>
       "Neuro" corresponds to neural network. Neural network can be thought of as a mathematical function, which takes a list of numbers(vector) as inputs, then outputs another list of numbers(vector).
     </p>
+    <img src="images/quadratic.gif" />
     <p>
       Neural network is a function that have coefficient or parameters, which you can change in order to achieve a different output. <br />
       Just like for quadratic function (ax^2 + bx + c = y) where a, b and c are parameters which you can change to achieve a different result.
     </p>
+    <img src="images/botBrain.png" />
     <p>
       In this game, the neural network takes information from the environment as input, then outputs the decision of the bot. So neural network acts as the brain of the bots.
     </p>
     <p>
       But how should you choose the parameters for the neural network? This is where the "Evolution" part comes in to play.
     </p>
+ 
 
     <h1>Evolution</h1>
+    <img src="images/evolution.jpeg" />
     <p>
       "Evolution" corresponds to genetic algorithm. Genetic algorithm is based on natural selection, which means that only the fittest organism can survive, that's why organism tends to evolve as time passes. There are 5 basic steps in genetic algorithm:
     </p>
@@ -54,28 +61,34 @@
     <p>
       Initialize a population. In the game above, a bunch of bots are create, where each of them has a neural network as their brain
     </p>
+    <img src="images/initialization.png" />
     <h3>2. Selection</h3>
     <p>
       Select the fittest. In the game above, the bots are forced to play the laser game, where all the bots with a weak neural network will touch the lasers and die. 
     </p>
+    <img src="images/selection.png" />
     <h3>3. Crossover</h3>
     <p>
       Create some new bots based on the fittest bots. In the game above, a new population of bots are initialized, and their brain are copied from the 5 bots that survived the longest
     </p>
+    <img src="images/crossover.png" />
     <h3>4. Mutation</h3>
     <p>
       The gene of the new bots are mutated. In the game above, the parameters of the neural network of the bots in the new population is slightly changed.
     </p>
+    <img src="images/mutation.png" />
     <h3>5. Repeat</h3>
     <p>
       Repeat step 2-4.
     </p>
+    <img src="images/train.gif" />
 
     <h1>Architecture and Parameters</h1>
     <p>
       This section is for people who are familiar with neurooevolution.
     </p>
     <h3>Architecture</h3>
+    <img src="images/architecture.png" />
     <ul>
       <li>Layer: 3</li>
       <li>Input Layer Size: 17 units</li>
@@ -83,16 +96,21 @@
       <li>Output Layer Size: 4 units</li>
     </ul>
     <h4>Input Layer</h4>
-    <p>
-      <ul>
+    <ul>
+      <img src="images/inputLaserDetection.png" />
       <li>12 of the input units are ray detection (1 for each ray): return 0 when no laser detected, else return the distance of the bot from the laser</li>
+      <img src="images/inputAgent.png" />
       <li>4 of the input units are x position, y position, x velocity and y velocity</li>
+      <img src="images/inputCenter.png" />
       <li>1 of the input units are center detection: return 1 when bot is in a laser, else return 0</li>
-      </ul>
+    </ul>
+    <img src="images/internalTimer.gif" />
+    <p>
       Also each laser has a internal timer, where it is initially 0 when spawning, then it increases until the spawn animation has ended, the timer will stop at 1<br />
       All the ray detection inputs are multiplied by the internal timer of the laser that it detected.
     </p>
     <h4>Output Layer</h4>
+    <img src="images/output.png" />
     <p>
       Each of the output units corresponds to one of the arrow keys. So the neural network is controlling the bot just like how you control your character in the game.
     </p>
@@ -105,14 +123,74 @@
     </ul>
 
     <h1>Additional Information</h1>
+    <img src="images/explore1.png" />
+    <img src="images/explore2.png" />
+    <img src="images/explore3.png" />
     <p>
-      In the evolution process, the best bots from the previous population will also be included in the current populations. This is can ensure that there is enough exploitation (If you know a little about reinforcement learning, you will know that this is simply balancing the explore exploit tradeoff)
+      In the evolution process, the best bots from the previous population will also be included in the current populations. This can ensure that there is enough exploitation (If you know a little about reinforcement learning, you will know that this is simply balancing the explore-exploit tradeoff)
     </p>
     <p>
       Also, the best bots so far will also be included in the current population too. (Since apparently the thing above still doesn't give enough exploitation)
     </p>
+    <img src="images/exploitation.gif" />
     <p>
       Lastly, the lasers on the wall aren't here originally, I added them because without them, the bots will all just go to a corner and do nothing, since the probability of dying when staying at a corner is smaller. (In other words this is adding exploration to avoid too much exploitation)
+    </p>
+
+    <h1>Mathematical Details of the Architecture</h1>
+    <p>
+      Raw inputs from the environment: <br />
+      \(x_{raw}\) - x position of the bot, where \(-4.37 \le x_{raw} \le 4.37\) <br />
+      \(y_{raw}\) - y position of the bot, where \(-8.25 \le y_{raw} \le 8.25\) <br />
+      \(u_{raw}\) - x velocity of the bot, where \(-3 \le u_{raw} \le 3\) <br />
+      \(v_{raw}\) - y velocity of the bot, where \(-3 \le v_{raw} \le 3\) <br />
+      \(L_{raw}=(l_1,l_2,l_3,l_4...l_{12})\) - vector of the distances from the lasers detected, where each component corresponds to one of the laser detecting rays, the component is 0 if that detecting ray doesn't detect any laser <br />
+      \(T_{raw}=(t_1,t_2,t_3,t_4...t_{12})\) - vector of the internal timers of the lasers detected <br />
+      \(c_{raw}=
+      \begin{cases}
+      1  & \text{if the bot is in a laser} \\
+      0 & \text{if the bot is not in a laser}
+      \end{cases}
+      \)<br />
+
+      The above raw inputs are not used directly as the input of the neural network, they are all squeezed into processed inputs which are in the range of -1 to 1<br />
+      Processed inputs: <br />
+      \(x=tanh(\frac{x_{raw}}2)\) - processed x position <br />
+      \(y=tanh(\frac89y_{raw})\) - processed y position <br />
+      \(u=tanh(\frac43u_{raw})\) - processed x velocity <br />
+      \(v=tanh(\frac43v_{raw})\) - processed y velocity <br />
+      \(L=T\odot 0.85^{\frac{10}3L}\) where \(\odot\) denotes the hadamard product (elementwise product) and \(0.85^{\frac{10}3L}\) is an elementwise exponential function <br />
+      \(I_0=concat(L, x, y, u, v, c_{raw})\) where concat is a function that concatenate a bunch of vectors into one long vector. E.g. \(concat((1, 2), (3, 4))=(1,2,3,4)\)<br />
+      \(I=\)column matrix of \(I_0\) <br />
+      
+      We can now use \(I\) as the input of the neural network <br />
+
+      \(H=tanh(W_{ih}I+B_{ih})\) where \(W_{ih}\) is the weight matrix between input and hidden layer, \(B_{ih}\) is the bias matrix between input and hidden layer, \(tanh()\) is an elementwise hyperbolic tangent function<br />
+      \(O=sign(W_{ho}H+B_{ho})\) where \(W_{ih}\) is the weight matrix between hidden and output layer, \(B_{ih}\) is the bias matrix between hidden and output layer, \(sign()\) is an elementwise sign function<br />
+      The matrix \(O\) has 4 components each corresponds to one of the four arrow keys. <br />
+      Let \(O=
+        \left[
+        \begin{array}{}
+        o_{left} \\ o_{right} \\ o_{up} \\ o_{down}
+        \end{array}
+        \right]
+      \), <br />
+
+      Lastly, the bot presses \(
+        \begin{cases}
+        \text{left arrow} & \text{if }o_{left} \gt o_{right} \\
+        \text{right arrow} & \text{if }o_{right} \gt o_{left} \\
+        \text{nothing} & \text{if }o_{left} = o_{right}
+        \end{cases}  
+      \)
+      and also presses \(
+        \begin{cases}
+        \text{up arrow} & \text{if }o_{up} \gt o_{down} \\
+        \text{down arrow} & \text{if }o_{down} \gt o_{up} \\
+        \text{nothing} & \text{if }o_{up} = o_{down}
+        \end{cases}  
+      \)<br />
+      <img src="images/architecture.png" />
     </p>
   </body>
 </html>
