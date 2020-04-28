@@ -27,16 +27,20 @@ div.topBar{
     top: 0px;
     color: white;
     font-size: 50px;
-    letter-spacing: 5px;
     font-weight: 200;
     transition: height 2s;
+    box-shadow: 0 0 10px black;
 }
 div.topBar div{
     margin: auto;
     opacity: 1;
 }
+div.topBar div.ne{
+    display: none;
+    letter-spacing: 60px;
+}
 div.middleBar{
-    width: 100%;
+    width: 80%;
     font-size: 80px;
     font-weight: 300;
     padding-left: 10%;
@@ -44,6 +48,7 @@ div.middleBar{
     padding-top: 15px;
     padding-bottom: 15px;
     background-color: rgb(189, 189, 189);
+    box-shadow: 0 0 5px rgb(105, 105, 105);
 }
 div.topImage{
     margin-top: 95px;
@@ -55,12 +60,21 @@ div.topImage{
     filter: brightness(0.7) saturate(0);
 }
 div.title{
-    width: 100%;
+    width: 80%;
     padding-left: 10%;
     padding-right: 10%;
     padding-top: 15px;
     padding-bottom: 15px;
     background-color: rgb(189, 189, 189);
+    box-shadow: 0 0 5px rgb(105, 105, 105);
+}
+div.title span.titleBig{
+    font-size: 80px;
+    font-weight: 300;
+}
+div.title span.titleSmall{
+    font-size: 40px;
+    font-weight: 200;
 }
 img.control {
     width: 150px;
@@ -111,27 +125,27 @@ div.centerAlign{
     width: 100%;
 }
 div.Slide{
-    width: 1200px;
-    height: 600px;
+    width: 48vw;
+    height: 24vw;
     overflow: hidden;
     margin: auto;
 }
 div.Slide div.Arrows{
     position: absolute;
-    width: 1200px;
-    height: 600px;
+    width: 48vw;
+    height: 24vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 div.Slide div.Arrows div.lArrow{
-    height: 200px;
-    width: 100px;
+    height: 8vw;
+    width: 5vw;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    font-size: 80px;
+    font-size: 4vw;
     text-align: center;
-    line-height: 200px;
+    line-height: 8vw;
     z-index: 1;
 }
 div.Slide div.Arrows div.lArrow:hover{
@@ -142,15 +156,16 @@ div.Slide div.Arrows div.lArrow:active{
     background-color: rgba(99, 99, 99, 0.5);
 }
 div.Slide div.Arrows div.rArrow{
-    height: 200px;
-    width: 100px;
+    height: 8vw;
+    width: 5vw;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    font-size: 80px;
+    font-size: 4vw;
     text-align: center;
-    line-height: 200px;
+    line-height: 8vw;
     z-index: 1;
 }
+
 div.Slide div.Arrows div.rArrow:hover{
     cursor: pointer;
     background-color: rgba(75, 75, 75, 0.5);
@@ -160,27 +175,207 @@ div.Slide div.Arrows div.rArrow:active{
 }
 div.Slide img.explore1 {
     position: relative;
-    right: 0px;
+    width: 48vw;
+    right: 0vw;
     transition: right 1s;
 }
 div.Slide img.explore2 {
     position: relative;
-    bottom: 604px;
-    left: 1200px;
+    width: 48vw;
+    bottom: 24.3vw;
+    left: 48vw;
     transition: left 1s;
 }
 div.Slide div.b4after{
     position: absolute;
     z-index: 1;
-    padding: 8px 15px 8px 15px;
+    padding: 0.5vw 1vw 0.5vw 1vw;
     color: white;
     font-weight: 300;
-    font-size: 30px;
+    font-size: 1.5vw;
     background-color: rgba(0, 0, 0, 0.507);
 }
 img.space {
-    margin-bottom: 40px;
+    margin-bottom: 4vw;
+    width: 60%;
 }
-img.quadratic {
-    width: 70%;
+img.control {
+    width: 12%;
+}
+img.brain {
+    width: 20%;
+}
+img.step4 {
+    width: 40%;
+}
+img.nn {
+    width: 40%;
+}
+img.architecture {
+    width: 50%;
+}
+.frame {
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: rgb(202, 202, 202);
+    box-shadow: 0 0 5px rgb(126, 126, 126);
+}
+@media screen and (max-width: 1620px){
+    div.title span.titleBig{
+        font-size: 60px;
+    }
+    div.title span.titleSmall{
+        font-size: 32px;
+    }
+    div.middleBar{
+        font-size: 60px;
+    }
+}
+@media screen and (max-width: 1400px){
+    div.title span.titleBig{
+        font-size: 50px;
+    }
+    div.middleBar{
+        font-size: 50px;
+    }
+    div.title span.titleSmall{
+        font-size: 30px;
+    }
+    div.topBar{
+        font-size: 38px;
+    }
+    div.topBar div.ne{
+        letter-spacing: 40px;
+    }
+}
+@media screen and (max-width: 1200px){
+    div.title span.titleBig{
+        font-size: 40px;
+    }
+    div.title span.titleSmall{
+        font-size: 25px;
+    }
+    div.topBar{
+        font-size: 30px;
+    }
+    div.topBar div.ne{
+        letter-spacing: 40px;
+    }
+    p{
+        font-size: 18px;
+    }
+    div.middleBar{
+        font-size: 40px;
+    }
+    h1 {
+        margin-top: 60px;
+        font-size: 35px;
+    }
+    h2 {
+        margin-top: 45px;
+        font-size: 25px;
+    }
+    h3{
+        margin-top: 35px;
+    }
+    h4{
+        margin-top: 35px;
+        font-size: 18px;
+    }
+    h5{
+        font-size: 18px;
+    }
+    h6{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 900px){
+    div.title span.titleSmall{
+        font-size: 20px;
+    }
+    div.topImage{
+        height: 350px;
+    }
+    div.topBar{
+        font-size: 18px;
+    }
+    div.topBar div.ne{
+        letter-spacing: 30px;
+    }
+    p{
+        font-size: 15px;
+    }
+    h1 {
+        margin-top: 30px;
+        font-size: 30px;
+    }
+    h2 {
+        margin-top: 30px;
+        font-size: 22px;
+    }
+    h3{
+        margin-top: 30px;
+    }
+    h4{
+        margin-top: 30px;
+        font-size: 15px;
+    }
+    h5{
+        font-size: 15px;
+    }
+    h6{
+        font-size: 14px;
+    }
+    
+}
+@media screen and (max-width: 750px){
+    div.title span.titleBig{
+        font-size: 30px;
+    }
+    h1 {
+        font-size: 25px;
+        margin-top: 10px;
+    }
+    div.middleBar{
+        font-size: 30px;
+    }
+    div.title span.titleSmall{
+        font-size: 15px;
+    }
+    div.topImage{
+        height: 200px;
+    }
+    div.topBar div.ne{
+        letter-spacing: 20px;
+    }
+    p{
+        font-size: 12px;
+    }
+    h1 {
+        font-size: 25px;
+    }
+    h2 {
+        margin-top: 30px;
+        font-size: 18px;
+    }
+    h3{
+        margin-top: 25px;
+        font-size: 18px;
+    }
+    h4{
+        margin-top: 25px;
+        font-size: 12px;
+    }
+    h5{
+        font-size: 12px;
+    }
+    h6{
+        font-size: 11px;
+    }
+}
+@media screen and (max-width: 450px){
+    div.topBar div.ne{
+        letter-spacing: 15px;
+    }
 }

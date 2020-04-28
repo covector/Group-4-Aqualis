@@ -19,10 +19,10 @@
   </head>
   <body>
     <div class="topBar">
-      <div class="load">Loading</div>
+      <div class="load">Loading...</div><div class="ne">NeuroEvolution</div>
     </div>
     <div class="topImage"></div>
-    <div class="title"><span style="font-size: 80px;font-weight: 300;">NeuroEvolution </span><span style="font-size: 40px;font-weight: 200;">a demonstration of reinforcement learning</span></div>
+    <div class="title"><span class="titleBig">NeuroEvolution </span><span class="titleSmall">a demonstration of reinforcement learning</span></div>
   <div class="game">
     <div class="webgl-content">
       <div id="unityContainer" style="width: 70vw; height: 39.375vw; margin: auto;"></div>
@@ -61,7 +61,7 @@
       \[quadratic(x)=ax^2+bx+c=y\]
     </p>
 
-    <div class="centerAlign"><img src="images/quadratic.gif" alt="tweaking quadratic coefficient in desmos" class="quadratic space"/></div>
+    <div class="centerAlign"><img src="images/quadratic.gif" alt="tweaking quadratic coefficient in desmos" class="quadratic space frame"/></div>
     <p>
       In this game, the neural network takes information from the environment as input, then outputs the decision of the bot, just like how our brain takes sensory stimuli as inputs, then outputs decision. So neural network is somewhat the brain of the bot.
     </p>
@@ -78,7 +78,7 @@
     <p> 
         Genetic algorithm is an algorithm based on the theory of natural selection, which means that only the fittest organism can survive, only the organism with desirable features can pass down these features to their offspring, which explains how organism evolve.
     </p>
-    <div class="centerAlign"><img src="images/evolution.jpeg" alt="evolution of human" class="evolve space"/></div>
+    <div class="centerAlign"><img src="images/evolution.jpeg" alt="evolution of human" class="evolve space frame"/></div>
     <h5>
       Before we talk about the algorithm, let's first define some of the terms:
     </h5>
@@ -91,12 +91,12 @@
     <p>
       Start a new generation, initialize a population. A bunch of bots are create, where each of them has a neural network acting as their brain
     </p>
-    <div class="centerAlign"><img src="images/initialization.png" alt="initilization stage" class="step1 space" /></div>
+    <div class="centerAlign"><img src="images/initialization.png" alt="initilization stage" class="step1 space frame" /></div>
     <h3>2. Selection</h3>
     <p>
       Select the fittest. The bots are forced to play the laser game, where all the bots with a weak neural network will touch the lasers and die, only the bots with the best neural network can survive
     </p>
-    <div class="centerAlign"><img src="images/selection.png" alt="selection stage" class="step2 space" /></div>
+    <div class="centerAlign"><img src="images/selection.png" alt="selection stage" class="step2 space frame" /></div>
     <h3>3. Crossover</h3>
     <p>
       Create a whole new population based on the fittest bots from the previous population. A new population of bots are initialized, and their brain are copied from the 5 bots that survived the longest
@@ -111,7 +111,7 @@
     <p>
       End current generation and start a new generation, then repeat step 2-4 with the newly created population.
     </p>
-    <div class="centerAlign"><img src="images/train.gif" alt="the training process" class="train space" /></div>
+    <div class="centerAlign"><img src="images/train.gif" alt="the training process" class="train space frame" /></div>
 
     <h1>Architecture and Parameters</h1>
     <p>
@@ -123,23 +123,23 @@
     <h6>- Input Layer Size: 17 units</h6>
     <h6>- Hidden Layer Size: 5 units</h6>
     <h6>- Output Layer Size: 4 units</h6>
-    <h4>Input Layer</h4>
+    <h3>Input Layer</h3>
     <p><strong>12</strong> of the input units are ray detection (1 for each ray): each units represent the distance of the bot from the laser</p>
-    <div class="centerAlign"><img src="images/inputLaserDetection.png" alt="laser detection as inputs" class="input1 space" /></div>
+    <div class="centerAlign"><img src="images/inputLaserDetection.png" alt="laser detection as inputs" class="input1 space frame" /></div>
     <p><strong>4</strong> of the input units are x position, y position, x velocity and y velocity</p>
-    <div class="centerAlign"><img src="images/inputAgent.png" alt="mechanical information of bot as inputs" class="input2 space" /></div>
+    <div class="centerAlign"><img src="images/inputAgent.png" alt="mechanical information of bot as inputs" class="input2 space frame" /></div>
     <p><strong>1</strong> of the input units is the center detection: the unit will be 1 when bot is in a laser, else it will be 0</p>
-    <div class="centerAlign"><img src="images/inputCenter.png" alt="center detection as input" class="input3 space" /></div>
+    <div class="centerAlign"><img src="images/inputCenter.png" alt="center detection as input" class="input3 space frame" /></div>
     <p>
       Also each laser has an internal timer, where it is initially 0 when spawning the laser, then it increases until the spawn animation has ended, the timer will stop at 1<br />
       All the ray detection inputs are multiplied by the internal timer of the laser that it detected.
     </p>
-    <div class="centerAlign"><img src="images/internalTimer.gif" alt="internal timer of a laser" class="timer space" /></div>
-    <h4>Output Layer</h4>
+    <div class="centerAlign"><img src="images/internalTimer.gif" alt="internal timer of a laser" class="timer space frame" /></div>
+    <h3>Output Layer</h3>
     <p>
       Each of the output units corresponds to one of the arrow keys. So the neural network is controlling the bot just like how you control your character in the game.
     </p>
-    <div class="centerAlign"><img src="images/output.png" alt="keystrokes as output" class="output space" /></div>
+    <div class="centerAlign"><img src="images/output.png" alt="keystrokes as output" class="output space frame" /></div>
     <h2>Parameters</h2>
     <h6>- Population Size: 60</h6>
     <h6>- Mutation Rate: 0.1 and 0.2 (the mutation rate of the two bots are different)</h6>
@@ -153,8 +153,8 @@
     <p>
       In the evolution process, the best bots from the previous population will also be included in the current populations. This can ensure that there is enough exploitation. This technique is somewhat like increasing the life expectancy of an organism, where organism have more opportunity to pass down their genes.
     </p>
-    <div class="centerAlign" style="margin-bottom: 40px;">
-    <div class="Slide">
+    <div class="centerAlign" style="margin-bottom: 40px">
+    <div class="Slide frame">
       <div class="Arrows">
         <div class="lArrow" onclick="slideL()">&lt;</div>
         <div class="rArrow" onclick="slideR()">&gt;</div>
@@ -167,12 +167,12 @@
     <p>
       The best bots so far will also be included in the current population too. Since apparently the technique above still doesn't give enough exploitation. This technique can be thought of as the admiration for successful people in history, where we do not completely forget about previous successful people.
     </p>    
-    <div class="centerAlign"><img src="images/explore3.png" alt="exploration by admiration" class="explore3 space" /></div>
+    <div class="centerAlign"><img src="images/explore3.png" alt="exploration by admiration" class="explore3 space frame" /></div>
     <h2>Exploration</h2>
     <p>
       The lasers on the wall aren't there originally, I added them because without them, the bots will all just go to a wall and do nothing, since the probability of dying when staying at a wall is smaller. In other words this is reducing exploitation.
     </p>
-    <div class="centerAlign"><img src="images/exploitation.gif" alt="exploitation by adding wall laser" class="exploit space"/></div>
+    <div class="centerAlign"><img src="images/exploitation.gif" alt="exploitation by adding wall laser" class="exploit space frame"/></div>
 
     <h1>Mathematical Details of the Architecture</h1>
     
