@@ -24,7 +24,7 @@
 
     <img src="images/control.png" />
     <p>
-      This is a game of dodging lasers, the only objective of the game is to survive as long as possible, there are 2 bots in the game too, they are both trained using neuroevolution.
+      This is a game of dodging lasers, the only objective of the game is to survive as long as possible, there are 2 bots in the game too, both of them have been trained using neuroevolution.
     </p>
 
     <h1>What is NeuroEvolution</h1>
@@ -36,7 +36,7 @@
     <img src="images/neuralNet.png" />
     <img src="images/netEquation.png" />
     <p>
-      "Neuro" corresponds to neural network. Neural network can be thought of as a mathematical function, which takes a list of numbers(vector) as inputs, then outputs another list of numbers(vector).
+      "Neuro" refers to neural network. Neural network is a mathematical function, which takes a list of numbers(vector) as inputs, then outputs another list of numbers(vector).
     </p>
     <img src="images/quadratic.gif" />
     <p>
@@ -45,31 +45,37 @@
     </p>
     <img src="images/botBrain.png" />
     <p>
-      In this game, the neural network takes information from the environment as input, then outputs the decision of the bot. So neural network acts as the brain of the bots.
+      In this game, the neural network takes information from the environment as input, then outputs the decision of the bot, just like how our brain takes sensory stimuli as inputs, then outputs decision. So neural network is somewhat the brain of the bots.
     </p>
     <p>
-      But how should you choose the parameters for the neural network? This is where the "Evolution" part comes in to play.
+      But how should you choose the parameters for the neural network in order to get maximum performance? This is where the "Evolution" part comes into play.
     </p>
  
 
     <h1>Evolution</h1>
     <img src="images/evolution.jpeg" />
     <p>
-      "Evolution" corresponds to genetic algorithm. Genetic algorithm is based on natural selection, which means that only the fittest organism can survive, that's why organism tends to evolve as time passes. There are 5 basic steps in genetic algorithm:
+      "Evolution" refers to genetic algorithm. Genetic algorithm is an algorithm based on the theory of natural selection, which means that only the fittest organism can survive, only the organism with desirable features can pass down these features to their offspring, which explains how organism evolve. There are 5 basic steps in genetic algorithm:
     </p>
+    <ul>
+      Here let's define of the terms:
+      <li>generation - 1 generation corresponds to 1 population. A generation starts when a new popoulation is initialized, and it ends when the next population is initialized.</li>
+      <li>brain - from now on I am going to use brain and neural network interchangeably</li>
+      <li>population - A bunch of bots that are spawned in at the same time</li>
+    </ul>
     <h3>1. Initilization</h3>
     <p>
-      Initialize a population. In the game above, a bunch of bots are create, where each of them has a neural network as their brain
+      Start a new generation, initialize a population. A bunch of bots are create, where each of them has a neural network acting as their brain
     </p>
     <img src="images/initialization.png" />
     <h3>2. Selection</h3>
     <p>
-      Select the fittest. In the game above, the bots are forced to play the laser game, where all the bots with a weak neural network will touch the lasers and die. 
+      Select the fittest. The bots are forced to play the laser game, where all the bots with a weak neural network will touch the lasers and die, only the bots with the best neural network can survive
     </p>
     <img src="images/selection.png" />
     <h3>3. Crossover</h3>
     <p>
-      Create some new bots based on the fittest bots. In the game above, a new population of bots are initialized, and their brain are copied from the 5 bots that survived the longest
+      Create a whole new population based on the fittest bots from the previous population. A new population of bots are initialized, and their brain are copied from the 5 bots that survived the longest
     </p>
     <img src="images/crossover.png" />
     <h3>4. Mutation</h3>
@@ -79,13 +85,13 @@
     <img src="images/mutation.png" />
     <h3>5. Repeat</h3>
     <p>
-      Repeat step 2-4.
+      End current generation, then repeat step 2-4 with the newly created population.
     </p>
     <img src="images/train.gif" />
 
     <h1>Architecture and Parameters</h1>
     <p>
-      This section is for people who are familiar with neurooevolution.
+      This section is for people who are familiar with neural network already. Also the information provided in this section some of the details are ommited, a more detailed and accurate information can be found in the "Mathematical Details of the Architecture" section.
     </p>
     <h3>Architecture</h3>
     <img src="images/architecture.png" />
@@ -98,15 +104,15 @@
     <h4>Input Layer</h4>
     <ul>
       <img src="images/inputLaserDetection.png" />
-      <li>12 of the input units are ray detection (1 for each ray): return 0 when no laser detected, else return the distance of the bot from the laser</li>
+      <li>12 of the input units are ray detection (1 for each ray): each units represent the distance of the bot from the laser</li>
       <img src="images/inputAgent.png" />
       <li>4 of the input units are x position, y position, x velocity and y velocity</li>
       <img src="images/inputCenter.png" />
-      <li>1 of the input units are center detection: return 1 when bot is in a laser, else return 0</li>
+      <li>1 of the input units is the center detection: the unit will be 1 when bot is in a laser, else it will be 0</li>
     </ul>
     <img src="images/internalTimer.gif" />
     <p>
-      Also each laser has a internal timer, where it is initially 0 when spawning, then it increases until the spawn animation has ended, the timer will stop at 1<br />
+      Also each laser has an internal timer, where it is initially 0 when spawning the laser, then it increases until the spawn animation has ended, the timer will stop at 1<br />
       All the ray detection inputs are multiplied by the internal timer of the laser that it detected.
     </p>
     <h4>Output Layer</h4>
@@ -122,19 +128,23 @@
       <li>Weight Clamping: only allow weights to be between -1 and 1</li>
     </ul>
 
-    <h1>Additional Information</h1>
+    <h1>Exploration vs Exploitation</h1>
+    <p>In reinforcement learning, there is a thing called explore exploit dilemma. Explore refers to the bot constantly try out new things in order to find a better strategy. Exploit refers to the bot uses its current knowledge and do things that it knows is good for sure.</p>
+    <p>In other word, this dilemma is about how much a bot should stay in its comfort zone.</p>
+    <h3>Exploitation</h3>
     <img src="images/explore1.png" />
     <img src="images/explore2.png" />
     <img src="images/explore3.png" />
     <p>
-      In the evolution process, the best bots from the previous population will also be included in the current populations. This can ensure that there is enough exploitation (If you know a little about reinforcement learning, you will know that this is simply balancing the explore-exploit tradeoff)
+      In the evolution process, the best bots from the previous population will also be included in the current populations. This can ensure that there is enough exploitation.
     </p>
     <p>
-      Also, the best bots so far will also be included in the current population too. (Since apparently the thing above still doesn't give enough exploitation)
+      Also, the best bots so far will also be included in the current population too. Since apparently the technique above still doesn't give enough exploitation.
     </p>
+    <h3>Exploration</h3>
     <img src="images/exploitation.gif" />
     <p>
-      Lastly, the lasers on the wall aren't here originally, I added them because without them, the bots will all just go to a corner and do nothing, since the probability of dying when staying at a corner is smaller. (In other words this is adding exploration to avoid too much exploitation)
+      The lasers on the wall aren't there originally, I added them because without them, the bots will all just go to a wall and do nothing, since the probability of dying when staying at a wall is smaller. In other words this is reducing exploitation.
     </p>
 
     <h1>Mathematical Details of the Architecture</h1>
