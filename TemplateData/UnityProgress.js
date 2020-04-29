@@ -1,3 +1,5 @@
+var notLoaded = true;
+
 function UnityProgress(unityInstance, progress) {
   if (!unityInstance.Module)
     return;
@@ -22,29 +24,42 @@ function UnityProgress(unityInstance, progress) {
 
   if (progress == 1){
     unityInstance.logo.style.display = unityInstance.progress.style.display = "none";
-    let bar = document.getElementsByClassName("load")[0];
-    let jar = document.getElementsByClassName("ne")[0];
-    bar.style.opacity = "1";
-    jar.style.opacity = "0";
-    let dir = 1;
-    let enter = setInterval(()=>{
-      if (dir == 1){
-        let currOp = parseFloat(bar.style.opacity);
-        if (currOp <= 0.05) {
-          dir = -1;
-          jar.style.display = "block";
-          bar.style.display = "none";
-        }
-        bar.style.opacity = (currOp - 0.05).toString();
-      }
-      else{
-        let currOp = parseFloat(jar.style.opacity);
-        if (currOp >= 0.95) {
-          document.getElementsByClassName("topBar")[0].style.height = "10%";
-          clearInterval(enter);
-        }
-        jar.style.opacity = (currOp + 0.05).toString();
-      }   
-    }, 50);
+    finLoad();
   }
+}
+
+function finLoad(){
+  notLoaded = false;
+  let bar = document.getElementsByClassName("load")[0];
+  let jar = document.getElementsByClassName("ne")[0];
+  bar.style.opacity = "1";
+  jar.style.opacity = "0";
+  let dir = 1;
+  let enter = setInterval(()=>{
+    if (dir == 1){
+      let currOp = parseFloat(bar.style.opacity);
+      if (currOp <= 0.05) {
+        dir = -1;
+        jar.style.display = "block";
+        bar.style.display = "none";
+      }
+      bar.style.opacity = (currOp - 0.05).toString();
+    }
+    else{
+      let currOp = parseFloat(jar.style.opacity);
+      if (currOp >= 0.95) {
+        document.getElementsByClassName("topBar")[0].style.height = "10%";
+        clearInterval(enter);
+      }
+      jar.style.opacity = (currOp + 0.05).toString();
+    }   
+  }, 50);
+}
+
+window.onload = ()=>{
+  setTimeout(()=>{
+    if (notLoaded){
+      finLoad();
+    }
+  }, 8000);
 }
