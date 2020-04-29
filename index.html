@@ -218,7 +218,7 @@
       \(y=tanh(\frac89y_{raw})\) - processed y position <br /><br />
       \(u=tanh(\frac43u_{raw})\) - processed x velocity <br /><br />
       \(v=tanh(\frac43v_{raw})\) - processed y velocity <br /><br />
-      \(L=T\odot 0.85^{\frac{10}3L}\) where \(\odot\) denotes the hadamard product (elementwise product) and \(0.85^{\frac{10}3L}\) is an elementwise exponential function <br /><br />
+      \(L=T_{raw}\odot 0.85^{\frac{10}3L_{raw}}\) where \(\odot\) denotes the hadamard product (elementwise product) and \(0.85^{\frac{10}3L_{raw}}\) is an elementwise exponential function <br /><br />
       \(I_0=concat(L, x, y, u, v, c_{raw})\) where concat is a function that concatenate a bunch of vectors into one long vector. E.g. \(concat((1, 2), (3, 4))=(1,2,3,4)\)<br /><br />
       \(I=\)column matrix of \(I_0\)
     </h4>
