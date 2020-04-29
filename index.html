@@ -88,9 +88,9 @@
     <h5>
       Before we talk about the algorithm, let's first define some of the terms:
     </h5>
-    <h6><strong>Generation</strong> - generation corresponds to 1 population. A generation starts when a new popoulation is initialized, and it ends when the next population is initialized.</h6>
+    <h6><strong>Generation</strong> - generation corresponds to 1 population. A generation starts when a new popoulation is initialized, and it ends when the next population is initialized</h6>
     <h6><strong>Brain</strong> - from now on I am going to use brain and neural network interchangeably</h6>
-    <h6><strong>Population</strong> - A bunch of bots that are spawned in at the same time</h6>
+    <h6><strong>Population</strong> - A bunch of bots that are spawned in at the same time. A population is all the bots that is from the same generation</h6>
     <br />
     <h2>There are 5 basic steps in genetic algorithm:</h2>
     <h3>1. Initilization</h3>
@@ -110,7 +110,7 @@
     <div class="centerAlign"><img src="images/crossover.png" alt="crossover stage" class="step3 space" /></div>
     <h3>4. Mutation</h3>
     <p>
-      The gene of the new bots are mutated. In the game above, the parameters of the neural network of the bots in the new population is slightly changed.
+      The gene of the new bots are mutated. In the game above, some of the parameters of the neural network is being selected, and each of the selected parameters will be added with a randomly generated number. This stage allows all the brain will have some degree of variation
     </p>
     <div class="centerAlign"><img src="images/mutation.png" alt="mutation stage" class="step4 space" /></div>
     <h3>5. Repeat</h3>
