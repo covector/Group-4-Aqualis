@@ -214,7 +214,7 @@
       Processed inputs: 
     </h2>
     <h4>
-      \(x=tanh(\frac{x_{raw}}2)\) - processed x position <br /><br />
+      \(x=tanh(\frac12x_{raw})\) - processed x position <br /><br />
       \(y=tanh(\frac89y_{raw})\) - processed y position <br /><br />
       \(u=tanh(\frac43u_{raw})\) - processed x velocity <br /><br />
       \(v=tanh(\frac43v_{raw})\) - processed y velocity <br /><br />
@@ -229,8 +229,8 @@
         Neural Network Equations: 
       </h2>
     <h4>
-      \(H=tanh(W_{ih}I+B_{ih})\) where \(W_{ih}\) is the weight matrix between input and hidden layer, \(B_{ih}\) is the bias matrix between input and hidden layer, \(tanh()\) is an elementwise hyperbolic tangent function<br /><br />
-      \(O=sign(W_{ho}H+B_{ho})\) where \(W_{ho}\) is the weight matrix between hidden and output layer, \(B_{ho}\) is the bias matrix between hidden and output layer, \(sign()\) is an elementwise sign function<br /><br />
+      \(H=tanh(W_{ih} \times I+B_{ih})\) where \(W_{ih}\) is the weight matrix between input and hidden layer, \(B_{ih}\) is the bias matrix between input and hidden layer, \(\times\) is the matrix multiplication, \(tanh()\) is an elementwise hyperbolic tangent function<br /><br />
+      \(O=sign(W_{ho} \times H+B_{ho})\) where \(W_{ho}\) is the weight matrix between hidden and output layer, \(B_{ho}\) is the bias matrix between hidden and output layer, \(\times\) is the matrix multiplication, \(sign()\) is an elementwise sign function<br /><br />
       The matrix \(O\) has 4 components each corresponds to one of the four arrow keys. <br /><br />
       Let \(O=
         \left[
