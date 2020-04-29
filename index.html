@@ -59,7 +59,7 @@
     </p>
     <div class="centerAlign"><img src="images/neuralNet.png" alt="a standard neural network" class="nn space"/></div>
     <p>
-      Neural network is a function that have coefficient or parameters, which you can change in order to achieve a different output.
+      Neural network is a function that have coefficient or parameters, which you can change in order to achieve a different result.
       \[neural\_network(x)=\sigma (w_2 \sigma (w_1 x + b_1 ) +b_2)=y\]
     </p>
     <p>
@@ -69,11 +69,11 @@
 
     <div class="centerAlign"><img src="images/quadratic.gif" alt="tweaking quadratic coefficient in desmos" class="quadratic space frame"/></div>
     <p>
-      In this game, the neural network takes information from the environment as input, then outputs the decision of the bot, just like how our brain takes sensory stimuli as inputs, then outputs decision. So neural network is somewhat the brain of the bot.
+      In this game, the neural network takes information from the environment as input, then outputs the direction the bot decided to go. This is equivalent to how our brain takes sensory stimuli as inputs, then outputs some decision. So neural network is somewhat the brain of the bot.
     </p>
     <div class="centerAlign"><img src="images/botBrain.png" alt="neural network is the brain of the bot" class="brain space"/></div>
     <p>
-      But how should you choose the parameters for the neural network in order to get maximum performance? This is where the "Evolution" part comes into play.
+      But how should you choose the parameters for the neural network in order to be able to dodge lasers? This is where the "Evolution" part comes into play.
     </p>
  
 
@@ -110,18 +110,22 @@
     <div class="centerAlign"><img src="images/crossover.png" alt="crossover stage" class="step3 space" /></div>
     <h3>4. Mutation</h3>
     <p>
-      The gene of the new bots are mutated. In the game above, some of the parameters of the neural network is being selected, and each of the selected parameters will be added with a randomly generated number. This stage allows all the brain will have some degree of variation
+      The gene of the new bots are mutated. In the game above, some of the parameters of the neural network is being selected, and each of the selected parameters will be added with a randomly generated number. This stage allows the brain to improve
     </p>
     <div class="centerAlign"><img src="images/mutation.png" alt="mutation stage" class="step4 space" /></div>
     <h3>5. Repeat</h3>
     <p>
-      End current generation and start a new generation, then repeat step 2-4 with the newly created population.
+      End current generation and start a new generation, then repeat step 2-4 with the newly created population. (The gif below has been sped up 5x)
     </p>
     <div class="centerAlign"><img src="images/train.gif" alt="the training process" class="train space frame" /></div>
+    <h2>Conclusion</h2>
+    <p>
+      In a nutshell, neuroevolution means that you are trying to find a neural network that outputs the best decision in the laser game, and in order to find a good neural network, you keep eliminating bad neural networks while mutating the good ones slightly in order to get an improvement.
+    </p>
 
     <h1>Architecture and Parameters</h1>
     <p>
-      This section is for people who are familiar with neural network already. Also the information provided in this section some of the details are ommited, a more detailed and accurate information can be found in the "Mathematical Details of the Architecture" section.
+      This section is for people who are familiar with neural network already. Also some of the information has been ommited in this section, more detailed and accurate information can be found in the "Mathematical Details of the Architecture" section.
     </p>
     <h2>Architecture</h2>
     <div class="centerAlign"><img src="images/architecture.png" alt="the architecture used" class="architecture space" /></div>
@@ -143,17 +147,17 @@
     <div class="centerAlign"><img src="images/internalTimer.gif" alt="internal timer of a laser" class="timer space frame" /></div>
     <h3>Output Layer</h3>
     <p>
-      Each of the output units corresponds to one of the arrow keys. So the neural network is controlling the bot just like how you control your character in the game.
+      Each of the output units corresponds to one of the arrow keys. So the neural network is controlling the bot just like how you control your player in the game.
     </p>
     <div class="centerAlign"><img src="images/output.png" alt="keystrokes as output" class="output space frame" /></div>
     <h2>Parameters</h2>
-    <h6>- Population Size: 60</h6>
+    <h6>- Population Size per generation: 60</h6>
     <h6>- Mutation Rate: 0.1 and 0.2 (the mutation rate of the two bots are different)</h6>
     <h6>- Mutation Magnitude: 0.25</h6>
     <h6>- Weight Clamping: only allow weights to be between -1 and 1</h6>
 
     <h1>Exploration vs Exploitation</h1>
-    <p>In reinforcement learning, there is a thing called explore-exploit dilemma. Explore refers to the bot constantly trying out new things in order to find a better strategy. Exploit refers to the bot uses its current knowledge and do things that it knows is good for sure.</p>
+    <p>In reinforcement learning, there is a thing called explore-exploit dilemma. Explore refers to the bot constantly trying out new things in order to find a better strategy. Exploit refers to the bot relies on its current knowledge and do things that it knows is good for sure.</p>
     <p>In other word, this dilemma is about how much a bot should stay in its comfort zone.</p>
     <h2>Exploitation</h2>
     <p>
@@ -176,7 +180,7 @@
     <div class="centerAlign"><img src="images/explore3.png" alt="exploration by admiration" class="explore3 space frame" /></div>
     <h2>Exploration</h2>
     <p>
-      The lasers on the wall aren't there originally, I added them because without them, the bots will all just go to a wall and do nothing, since the probability of dying when staying at a wall is smaller. In other words this technique is for reducing exploitation and increase exploration.
+      The lasers on the wall aren't there originally, I added them because without them, the bots will all just go to a wall and do nothing, since the probability of dying when staying at a wall is smaller. In other words this technique is for reducing exploitation and increase exploration. (The gif below has been sped up 5x)
     </p>
     <div class="centerAlign"><img src="images/exploitation.gif" alt="exploitation by adding wall laser" class="exploit space frame"/></div>
 
