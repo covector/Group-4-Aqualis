@@ -60,11 +60,10 @@ window.onload = ()=>{
   setTimeout(()=>{
     if (notLoaded){
       finLoad();
+        let equation = document.getElementsByClassName("MathJax CtxtMenu_Attached_0");
+        for (let i = 0; i < equation.length; i++){
+          equation[i].style.fontSize = "120%";
+        }
     }
   }, 6000);
-
-  let equation = document.getElementsByClassName("MathJax CtxtMenu_Attached_0");
-  for (let i = 0; i < equation.length; i++){
-    equation[i].style.fontSize = "200%";
-  }
 }
