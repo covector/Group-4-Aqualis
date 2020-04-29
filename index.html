@@ -141,10 +141,15 @@
     <p><strong>1</strong> of the input units is the center detection: the unit will be 1 when bot is in a laser, else it will be 0</p>
     <div class="centerAlign"><img src="images/inputCenter.png" alt="center detection as input" class="input3 space frame" /></div>
     <p>
-      Also each laser has an internal timer, where it is initially 0 when spawning the laser, then it increases until the spawn animation has ended, the timer will stop at 1<br />
-      All the ray detection inputs are multiplied by the internal timer of the laser that it detected.
+      Also each laser has an urgency value, where it is initially 0 when spawning the laser, then it increases until the spawn animation has ended, the value will stop at 1
     </p>
-    <div class="centerAlign"><img src="images/internalTimer.gif" alt="internal timer of a laser" class="timer space frame" /></div>
+    <p>
+      This urgency value is used for determining how urgent it is to dodge a particular laser
+    </p>
+    <p>
+      All the ray detection inputs are multiplied by the urgency of the laser that it detected
+    </p>
+    <div class="centerAlign"><img src="images/urgency.gif" alt="urgency of a laser" class="urgent space frame" /></div>
     <h3>Output Layer</h3>
     <p>
       Each of the output units corresponds to one of the arrow keys. So the neural network is controlling the bot just like how you control your player in the game.
@@ -154,7 +159,7 @@
     <h6>- Population Size per generation: 60</h6>
     <h6>- Mutation Rate: 0.1 and 0.2 (the mutation rate of the two bots are different)</h6>
     <h6>- Mutation Magnitude: 0.25</h6>
-    <h6>- Weight Clamping: only allow weights to be between -1 and 1</h6>
+    <h6>- Weight Clamping: only allow weights to be between -1 and 1 (weights are some of the parameters in a neural network)</h6>
 
     <h1>Exploration vs Exploitation</h1>
     <p>In reinforcement learning, there is a thing called explore-exploit dilemma. Explore refers to the bot constantly trying out new things in order to find a better strategy. Exploit refers to the bot relies on its current knowledge and do things that it knows is good for sure.</p>
@@ -188,12 +193,12 @@
     
       <h2>Raw inputs from the environment: </h2>
     <h4>
-      \(x_{raw}\) - x position of the bot, where \(-4.37 \le x_{raw} \le 4.37\) <br /><br />
-      \(y_{raw}\) - y position of the bot, where \(-8.25 \le y_{raw} \le 8.25\) <br /><br />
+      \(x_{raw}\) - x position of the bot, where \(-4.37 \le x_{raw} \le 4.37\) (game area width) <br /><br />
+      \(y_{raw}\) - y position of the bot, where \(-8.25 \le y_{raw} \le 8.25\) (game area height) <br /><br />
       \(u_{raw}\) - x velocity of the bot, where \(-3 \le u_{raw} \le 3\) <br /><br />
       \(v_{raw}\) - y velocity of the bot, where \(-3 \le v_{raw} \le 3\) <br /><br />
-      \(L_{raw}=(l_1,l_2,l_3,l_4...l_{12})\) - vector of the distances from the lasers detected, where each component corresponds to one of the laser detecting rays, the component is 0 if that detecting ray doesn't detect any laser <br /><br />
-      \(T_{raw}=(t_1,t_2,t_3,t_4...t_{12})\) - vector of the internal timers of the lasers detected <br /><br />
+      \(L_{raw}=(l_1,l_2,l_3,l_4...l_{12})\) - vector of the distances from the lasers detected, where each component corresponds to one of the laser detecting rays, the component is \(\infty\) if that detecting ray doesn't detect any laser <br /><br />
+      \(T_{raw}=(t_1,t_2,t_3,t_4...t_{12})\) - vector of the urgency values of the lasers detected, the component is 1 if that detecting ray doesn't detect any laser<br /><br />
       \(c_{raw}=
       \begin{cases}
       1  & \text{if the bot is in a laser} \\
