@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="play_icon.ico">
+    <title>Demonstration Video</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+    
+        window.onload = ()=>{document.getElementById("vid").addEventListener("ended", choiceAppear);}
+        function choiceAppear() {
+            document.getElementById("option").style.display = "flex";
+            document.getElementById("textInstruct").style.display = "block";
+            document.getElementById("vid").removeEventListener("ended", choiceAppear);
+        }
+    </script>
+    <style>
+        body{
+            text-align: center;
+            background-color: rgb(241, 241, 241);
+            font-family: Roboto, Arial, sans-serif;
+        }
+        h1.question{
+            margin-bottom: 3px;
+        }
+        div.hint{
+            margin-bottom: 10px;
+            color: rgb(48, 106, 182);
+        }
+        div.hint:hover{
+            color: rgb(58, 64, 145);
+            cursor: pointer;
+        }
+        video{
+            width: 1280px;
+            box-shadow: 0 0 5px rgb(126, 126, 126);
+        }
+        div#option{
+            width: 100%;
+            height: 240px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+        div#textInstruct{
+            margin-top: 10px;
+            font-size: 20px;
+            display: none;
+        }
+        div.thumbnail{
+            background-color: black;
+            font-size: 20px;
+            height: 170px;
+            width: 302px;
+            background-size: cover;
+            line-height: 170px;
+            color: rgba(255, 255, 255, 0);
+            transition: color 1s;
+            margin-left: 10px;
+            margin-right: 10px;
+            box-shadow: 0 0 5px rgb(136, 136, 136);
+            border-radius: 15px;
+            border-style: solid;
+            border-width: 5px;
+            border-color:rgb(219, 219, 219);
+        }
+        div.thumbnail:hover{
+            cursor: pointer;
+            color: white;
+        }
+        div.a{
+            background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("thumbnail/option a.png");
+        }
+        div.a:hover{
+            background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("thumbnail/option a.png");
+        }
+        div.b{
+            background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("thumbnail/option b.png");
+        }
+        div.b:hover{
+            background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("thumbnail/option b.png");
+        }
+        div.c{
+            background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("thumbnail/option c.png");
+        }
+        div.c:hover{
+            background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("thumbnail/option c.png");
+        }
+        @media screen and (max-width: 1400px){
+            video{
+                width: 853px;
+            }
+            div#option{
+                height: 150px;
+            }
+            div#textInstruct{
+                margin-top: 8px;
+                font-size: 18px;
+            }
+            div.thumbnail{
+                font-size: 18px;
+                height: 101px;
+                width: 180px;
+                line-height: 101px;
+                margin-left: 8px;
+                margin-right: 8px;
+            }
+        }
+        @media screen and (max-width: 900px){
+            video{
+                width: 640px;
+            }
+            div#option{
+                height: 120px;
+            }
+            div#textInstruct{
+                margin-top: 5px;
+                font-size: 15px;
+            }
+            div.thumbnail{
+                font-size: 15px;
+                height: 75px;
+                width: 133px;
+                line-height: 75px;
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+        }
+        @media screen and (max-width: 700px){
+            h1.question{
+                margin-bottom: 2px;
+                font-size: 20px;
+            }
+            div.hint{
+                font-size: 13px;
+                margin-bottom: 5px;
+            }
+            video{
+                width: 427px;
+            }
+            div#option{
+                height: 60px;
+            }
+            div#textInstruct{
+                margin-top: 3px;
+                font-size: 12px;
+            }
+            div.thumbnail{
+                font-size: 12px;
+                height: 40px;
+                width: 71px;
+                line-height: 40px;
+                margin-left: 3px;
+                margin-right: 3px;
+            }
+        }
+        @media screen and (max-width: 500px){
+            h1.question{
+                margin-bottom: 2px;
+                font-size: 15px;
+            }
+            div.hint{
+                font-size: 8px;
+                margin-bottom: 3px;
+            }
+            video{
+                width: 256px;
+            }
+        }
+    </style>
+</head>
+<body style="height: 100vh">
+    <h1 class="question">What is most effective in reducing mist formed on glasses when coated on them?</h1>
+    <div class="hint">Hint</div>
+    <video src="videos/laser.mp4" id="vid" controls autoplay></video>
+    <div id="textInstruct">Choose below</div>
+    <div id="option">
+        <a href="q1/toothPaste.html" style="text-decoration: none;"><div class="thumbnail a">Toothpaste</div></a>
+        <a href="q1/dishSoap.html" style="text-decoration: none;"><div class="thumbnail b">Dish soap</div></a>
+        <a href="q1/lipBalm.html" style="text-decoration: none;"><div class="thumbnail c">Lip balm</div></a>
+        <a href="q1/handSantizier.html" style="text-decoration: none;"><div class="thumbnail d">Hand santizier</div></a>
+    </div>
+</body>
+</html>

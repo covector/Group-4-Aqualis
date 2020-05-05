@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="play_icon.ico">
+    <title>Demonstration Video</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+    
+        window.onload = ()=>{document.getElementById("vid").addEventListener("ended", choiceAppear);}
+        function choiceAppear() {
+            document.getElementById("back").style.display = "block";
+        }
+    </script>
+    <style>
+        body{
+            text-align: center;
+            background-color: rgb(241, 241, 241);
+            font-family: Roboto, Arial, sans-serif;
+        }
+        h1.question{
+            margin-bottom: 10px;
+        }
+        video{
+            width: 1280px;
+            box-shadow: 0 0 5px rgb(126, 126, 126);
+        }
+        #back{
+            display: none;
+            font-size: 40px;
+            margin-top: 10px;
+            font-weight: 300;
+        }
+        @media screen and (max-width: 1400px){
+            video{
+                width: 853px;
+            }
+            #back{
+            font-size: 20px;
+        }
+        }
+        @media screen and (max-width: 900px){
+            video{
+                width: 640px;
+            }
+            #back{
+            font-size: 15px;
+        }
+        }
+        @media screen and (max-width: 700px){
+            h1.question{
+                margin-bottom: 2px;
+                font-size: 20px;
+            }
+            video{
+                width: 427px;
+            }
+            #back{
+            font-size: 12px;
+        }
+        }
+        @media screen and (max-width: 500px){
+            h1.question{
+                margin-bottom: 2px;
+                font-size: 15px;
+            }
+            video{
+                width: 256px;
+            }
+            #back{
+            font-size: 10px;
+        }
+        }
+    </style>
+</head>
+<body style="height: 100vh">
+    <h1 class="question">Hand santizier</h1>
+    <video src="../videos/laser.mp4" id="vid" controls autoplay></video>
+    <div id="back">You got it wrong, go back to <a href="../start.html">the previous page</a></div>
+</body>
+</html>
