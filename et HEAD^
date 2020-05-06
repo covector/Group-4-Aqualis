@@ -1,0 +1,228 @@
+[33mcommit 4d62739c51ef002f89ca2e05a3d469af63718c4c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Wed May 6 13:57:07 2020 +0800
+
+    why
+
+[33mcommit e4f1940d7a2398039fa10f5340db0ec67a6aba0f[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Wed May 6 13:53:38 2020 +0800
+
+    please
+
+[33mcommit 6390950b4d2ad47a6135d7d882519ec9bb6da405[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Wed May 6 13:47:45 2020 +0800
+
+    why wont you let me push
+
+[33mcommit 7c5cb58768c676a6d6266c95caedf0c13e54a81f[m
+Merge: b430882 a5e286d
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Wed May 6 13:25:30 2020 +0800
+
+    Merge branch 'gh-pages' of https://github.com/covector/Group-4-Aqualis
+
+[33mcommit b43088263434903ac1133d9fa3cc0ad1cd51e9ae[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Wed May 6 13:23:57 2020 +0800
+
+    dumb shit yay
+
+[33mcommit a5e286de0bfdf445ade33c9a8e305c77a19e8000[m[33m ([m[1;31morigin/gh-pages[m[33m)[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Wed May 6 13:06:51 2020 +0800
+
+    fuck everyone
+
+[33mcommit 36e669579aee42d0f651314405e803b5dc27ed1e[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Wed May 6 12:58:47 2020 +0800
+
+    im so done
+
+[33mcommit b74f3e1b34f0ec85f92011d5a9d2a45b97fecea2[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Wed May 6 12:44:26 2020 +0800
+
+    dumb shit yay
+
+[33mcommit 2de51fa62556a2db62b73b7eff0da0ada620e5af[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Tue May 5 12:54:03 2020 +0800
+
+    forgot to save css
+
+[33mcommit c327b6576eaaac713ce3166d7d4f486a8f649ead[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Tue May 5 12:38:12 2020 +0800
+
+    reorganised folders
+
+[33mcommit a03430c62aa9c3165d06e1ad08eaf25b025b765c[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Tue May 5 12:23:05 2020 +0800
+
+    added interactive adventure template
+
+[33mcommit 516e26c41caba01b66f0d81c54879d458474e6a7[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Tue May 5 12:20:20 2020 +0800
+
+    index html test
+
+[33mcommit cb08afd72b628f03e1cb5174414808df4000dd90[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Tue May 5 12:15:19 2020 +0800
+
+    added diy tutorial template no vid yet
+
+[33mcommit aa02834bbd55ccd8cd6b6319718772ec6dac09ea[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Wed Apr 29 21:21:22 2020 +0800
+
+    added symbol for matrix mult
+
+[33mcommit 7c93ece59f410ed9fde30d46e4cd2c4c24d3a4ce[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Wed Apr 29 18:56:14 2020 +0800
+
+    subscript missed
+
+[33mcommit 69de85fc720412924e0ba80b3745366f90cbf57c[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Wed Apr 29 18:39:13 2020 +0800
+
+    made math part more intuitive
+
+[33mcommit 76746b0e9656f8270d3a99c172be121229b4effb[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Wed Apr 29 18:24:35 2020 +0800
+
+    internal timer -> urgency value
+
+[33mcommit 2294391967325f87c424499d668f92951e828826[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Wed Apr 29 17:05:57 2020 +0800
+
+    adjusted wordings
+
+[33mcommit 6b2fb1b54087c49b9f9b158965d2e32ab3753fd7[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Wed Apr 29 15:47:04 2020 +0800
+
+    larger mutation illustration
+
+[33mcommit 2dab39ce416a9aef5857f37aa2c031bb683498f7[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Wed Apr 29 15:44:11 2020 +0800
+
+    rip grammar problem
+
+[33mcommit bdcce625fdc8ef83c69f5710d403befd3b6f320f[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Wed Apr 29 15:41:50 2020 +0800
+
+    mutation part not clear how to adjust
+
+[33mcommit 3f0566a5e7c1e551f972b5e06147953875d44c23[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Wed Apr 29 14:25:32 2020 +0800
+
+    onload fix size
+
+[33mcommit f0b4c6ecbdb7bb708b4bb00a47d394cfe0487f52[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Wed Apr 29 14:14:27 2020 +0800
+
+    fixed phone font size
+
+[33mcommit 5dc6867e4d037d38a90ee44441c34283c327d3a4[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Wed Apr 29 14:09:13 2020 +0800
+
+    fixed phone equation size
+
+[33mcommit b0d973b1194d939036f3f133e1772a89ed495453[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Wed Apr 29 13:30:41 2020 +0800
+
+    fixed equation on phone
+
+[33mcommit 1fb4775bf152a9b44c1695d0b97d2938c1b3ab0f[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Wed Apr 29 13:12:09 2020 +0800
+
+    fixed phone infinite loading
+
+[33mcommit bf323a307be6b16301eaf1ba3b3ce14c01526889[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Wed Apr 29 08:28:20 2020 +0800
+
+    neural -> neuro
+
+[33mcommit a7b39a1d4bc37b5938610a6c150450c3f87a9aab[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Wed Apr 29 00:03:55 2020 +0800
+
+    forgot to change ih to ho when copying
+
+[33mcommit cfadace9544b45d4db2c65d13a9610d9e5bb6e5e[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Tue Apr 28 23:54:56 2020 +0800
+
+    added more og meta data
+
+[33mcommit 3d6f9d45953308818d0d1c7ad6ebb7f188f6426c[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Tue Apr 28 23:43:19 2020 +0800
+
+    changed og image
+
+[33mcommit fec852d146128d702b0c91cde961640272969893[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Tue Apr 28 23:34:23 2020 +0800
+
+    test whatsapp share thumbnail
+
+[33mcommit 0f8ba6f98c2165d05f8f65433d5363691eeb8c88[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Tue Apr 28 23:09:06 2020 +0800
+
+    resizable windows
+
+[33mcommit add25205a4c94c95ace70fd12ebac48e974c6eda[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Tue Apr 28 20:42:51 2020 +0800
+
+    added styling
+
+[33mcommit d47ffc67222ec234fe6ae75169f58c1f2e1b45bb[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Tue Apr 28 09:46:56 2020 +0800
+
+    finished text content
+
+[33mcommit 4de6740da14b7d11310fa402ba70d2f9e85bfae7[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Mon Apr 27 22:42:46 2020 +0800
+
+    added images
+
+[33mcommit bbdaa89d19b23eb65ee65dd0c14a9a2b697b6357[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Sun Apr 26 20:43:42 2020 +0800
+
+    added description
+
+[33mcommit 331e99de4d967a8a31efdd8cb0e45df34d3cc044[m[33m ([m[1;32mgh-pagez[m[33m, [m[1;32mgh-pages[m[33m)[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Sun Apr 19 19:32:51 2020 +0800
+
+    changed velocity to fps independent
+
+[33mcommit 1fc439e0c58db8999ef7571625a0eb841444cf18[m
+Author: covector <60296643+covector@users.noreply.github.com>
+Date:   Sun Apr 19 10:10:57 2020 +0800
+
+    init files

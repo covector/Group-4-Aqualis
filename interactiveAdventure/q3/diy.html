@@ -4,15 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="play_icon.ico">
-    <title>Demonstration Video</title>
+    <title>Interactive Adventure</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-    <script type="text/javascript">
-    
-        window.onload = ()=>{document.getElementById("vid").addEventListener("ended", choiceAppear);}
-        function choiceAppear() {
-            document.getElementById("back").style.display = "block";
-        }
-    </script>
     <style>
         body{
             text-align: center;
@@ -22,18 +15,17 @@
         h1.question{
             margin-bottom: 10px;
         }
-        video{
+        #vid{
             width: 1280px;
             box-shadow: 0 0 5px rgb(126, 126, 126);
         }
         #back{
-            display: none;
             font-size: 40px;
             margin-top: 10px;
             font-weight: 300;
         }
         @media screen and (max-width: 1400px){
-            video{
+            #vid{
                 width: 853px;
             }
             #back{
@@ -41,7 +33,7 @@
         }
         }
         @media screen and (max-width: 900px){
-            video{
+            #vid{
                 width: 640px;
             }
             #back{
@@ -53,7 +45,7 @@
                 margin-bottom: 2px;
                 font-size: 20px;
             }
-            video{
+            #vid{
                 width: 427px;
             }
             #back{
@@ -65,7 +57,7 @@
                 margin-bottom: 2px;
                 font-size: 15px;
             }
-            video{
+            #vid{
                 width: 256px;
             }
             #back{
@@ -75,8 +67,9 @@
     </style>
 </head>
 <body style="height: 100vh">
+    <!--This is the dumbest fucking shit i have ever made in my fucking miserable life-->
     <h1 class="question">Put it into out DIY mask holder</h1>
-    <video src="../videos/laser.mp4" id="vid" controls autoplay></video>
+    <img src="video/folder.jpeg" id="vid">
     <div id="back">Congratulation! You are correct and also you have just completed the Interactive Adventure. <a href="../index.html">Retry?</a></div>
 </body>
 </html>

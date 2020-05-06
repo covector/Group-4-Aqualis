@@ -4,9 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="demonstrationGame/TemplateData/favicon.ico">
-    <title>404 Not Found</title>
+    <meta property="og:site_name" content="Aqualis Group 4 Project">
+    <meta property="og:title" content="Aqualis Group 4 Project" />
+    <meta property="og:description" content="We are Aqualis and we are very gay" />
+    <meta property="og:image" itemprop="image" content="https://covector.github.io/Group-4-Aqualis/images/logo.png">
+    <meta property="og:type" content="website" />
+    <title>Aqualis Group 4 Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body{
+            text-align: center;
+            background-color: rgb(230, 230, 230);
+            font-family: Roboto, Arial, sans-serif;
+        }
+        #vid{
+            width: 1280px;
+            height: 720px;
+            box-shadow: 0 0 5px rgb(126, 126, 126);
+        }
+        div.container{
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            margin-bottom: 10px;
+        }
+        div.holder{
+            height: 250px;
+            width: 400px;
+            line-height: 250px;
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 25px;
+        }
+        a{
+            text-decoration: none;
+        }
+        div.holder div{
+            background-size: cover;
+            background-position: center;
+            border-style: solid;
+            border-color:rgb(248, 248, 248);
+            border-width: 5px;
+            border-radius: 20px;
+            color: rgba(255, 255, 255, 0);
+            transition: color 1s;
+            box-shadow: 0 0 5px rgb(187, 187, 187);
+        }
+        div.holder div:hover{
+            cursor: pointer;
+            color: white;
+        }
+        div.holder div.diy{
+            background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("images/diyTutorial.png");
+        }
+        div.holder div.diy:hover{
+            background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/diyTutorial.png");
+        }
+        div.holder div.ia{
+            background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("images/interactiveAdventure.png");
+        }
+        div.holder div.ia:hover{
+            background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/interactiveAdventure.png");
+        }
+        div.holder div.dg{
+            background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("images/demonstrationGame.png");
+        }
+        div.holder div.dg:hover{
+            background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/demonstrationGame.png");
+        }
+        div.holder div.q{
+            background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("images/quiz.png");
+        }
+        div.holder div.q:hover{
+            background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/quiz.png");
+        }
+        @media screen and (max-width: 1650px){
+            #vid{
+                width: 1080px;
+                height: 608px;
+            }
+            div.container{
+                grid-template-columns: auto auto;
+            }
+        }
+        @media screen and (max-width: 1200px){
+            #vid{
+                width: 853px;
+                height: 480px;
+            }
+        }
+        @media screen and (max-width: 900px){
+            #vid{
+                width: 540px;
+                height: 304px;
+            }
+            div.container{
+                grid-template-columns: auto;
+            }
+        }
+        @media screen and (max-width: 600px){
+            #vid{
+                width: 360px;
+                height: 203px;
+            }
+        }
+        @media screen and (max-width: 450px){
+            #vid{
+                width: 240px;
+                height: 135px;
+            }
+            div.holder{
+                height: 125px;
+                width: 200px;
+                line-height: 125px;
+                font-size: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-    The game demonstration page has been moved to <a href="https://covector.github.io/Group-4-Aqualis/demonstrationGame/">https://covector.github.io/Group-4-Aqualis/demonstrationGame/</a>.
+    <div class="container">
+    <a href="https://covector.github.io/Group-4-Aqualis/diyTutorial/" target="_blank"><div class="holder"><div class="diy">DIY Tutorial</div></div></a>
+    <a href="https://covector.github.io/Group-4-Aqualis/interactiveAdventure/" target="_blank"><div class="holder"><div class="ia">Interactive Adventure</div></div></a>
+    <a href="https://covector.github.io/Group-4-Aqualis/demonstrationGame/" target="_blank"><div class="holder"><div class="dg">NeuroEvolution</div></div></a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScPYU_SmCvxvN9ibaNNI3ls0sQAt4e8m47hNrCyy2NG7Z0oiw/viewform?usp=sf_link" target="_blank"><div class="holder"><div class="q">Google Form Quiz</div></div></a>
+    </div>
+    <iframe src="https://www.youtube.com/embed/BsoJ95FAqBM?autoplay=1" id="vid" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </body>
 </html>
