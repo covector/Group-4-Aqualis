@@ -39,6 +39,13 @@
         a{
             text-decoration: none;
         }
+        .vote{
+            color: rgb(101, 159, 226);
+            font-size: 30px;
+        }
+        .vote:hover{
+            color: rgb(81, 127, 179);
+        }
         div.holder div{
             background-size: cover;
             background-position: center;
@@ -94,6 +101,9 @@
             }
         }
         @media screen and (max-width: 900px){
+            .vote{
+                font-size: 20px;
+            }
             #vid{
                 width: 540px;
                 height: 304px;
@@ -103,12 +113,18 @@
             }
         }
         @media screen and (max-width: 600px){
+            .vote{
+                font-size: 15px;
+            }
             #vid{
                 width: 360px;
                 height: 203px;
             }
         }
         @media screen and (max-width: 450px){
+            .vote{
+                font-size: 12px;
+            }
             #vid{
                 width: 240px;
                 height: 135px;
@@ -129,6 +145,7 @@
     <a href="https://covector.github.io/Group-4-Aqualis/demonstrationGame/" target="_blank"><div class="holder"><div class="dg">NeuroEvolution</div></div></a>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScPYU_SmCvxvN9ibaNNI3ls0sQAt4e8m47hNrCyy2NG7Z0oiw/viewform?usp=sf_link" target="_blank"><div class="holder"><div class="q">Google Form Quiz</div></div></a>
     </div>
+    <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSf7Don0Plu2FVmIGhOiU0EehoIVVpcQ7hK2bk5POQcNnnQQSg/viewform" class="vote" target="_blank">Vote For Us</a></p>
     <iframe src="https://www.youtube.com/embed/BsoJ95FAqBM?autoplay=1" id="vid" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </body>
 </html>
